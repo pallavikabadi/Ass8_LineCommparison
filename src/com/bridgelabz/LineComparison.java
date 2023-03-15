@@ -8,6 +8,7 @@ public class LineComparison {
         double x3,x4,y3,y4;
         double LengthofLine1,LengthofLine2;
         Scanner inputvalues = new Scanner(System.in);
+
         //lengthofline1 calculation
         System.out.println("Enter the value of x1 :");
         x1 = inputvalues.nextInt();
@@ -31,13 +32,21 @@ public class LineComparison {
         y4 = inputvalues.nextInt();
         LengthofLine2 = Math.sqrt(Math.pow(x4-x3,2)+ Math.pow(y4-y3,2));
         System.out.println("The length of a line =" +LengthofLine2);
-
+        //equality checking
         String Line1=String.valueOf(LengthofLine1);
         String Line2=String.valueOf(LengthofLine2);
         if(Line1.equals(Line2))
             System.out.println("Length of both lines are equal");
-
         else
             System.out.println("lengths are not equal");
+        //Comparing lines
+        int compare=Line1.compareTo(Line2);
+        System.out.println(compare);
+        if(compare==0)
+            System.out.println("lines are equal");
+        else if(compare>0)
+            System.out.println("line1 is greater then line2");
+        else
+            System.out.println("line1 is less than line2");
     }
 }
